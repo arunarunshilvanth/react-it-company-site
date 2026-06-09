@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap');
+
+.ct {
+
+  padding: 4rem 2rem;
+
+  background:
+    radial-gradient(circle at top right,
+      rgba(10,102,194,0.05),
+      transparent 30%),
+
+    radial-gradient(circle at bottom left,
+      rgba(10,102,194,0.04),
+      transparent 30%),
+
+    #f8fbff;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+/* ───────────────── HEADER ───────────────── */
+
+.ct-head {
+
+  text-align: center;
+
+  margin-bottom: 2.5rem;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+/* badge */
+.ct-badge {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  background: #eaf4ff;
+
+  border: 1px solid rgba(10,102,194,0.12);
+
+  color: #004182;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+
+  padding: 7px 16px;
+
+  border-radius: 20px;
+
+  margin-bottom: 1rem;
+
+  font-family: 'Outfit', sans-serif;
+
+  backdrop-filter: blur(10px);
+}
+
+/* title */
+.ct-head h2 {
+
+  font-size: clamp(2rem,4vw,3rem);
+
+  font-weight: 800;
+
+  color: #0f172a;
+
+  margin-bottom: 0.55rem;
+
+  font-family: 'Syne', sans-serif;
+
+  letter-spacing: -1px;
+}
+
+.ct-head h2 em {
+
+  font-style: normal;
+
+  color: #0a66c2;
+}
+
+/* desc */
+.ct-head p {
+
+  font-size: 0.95rem;
+
+  color: #64748b;
+
+  font-family: 'Outfit', sans-serif;
+
+  font-weight: 300;
+
+  line-height: 1.8;
+}
+
+/* ───────────────── TILES GRID ───────────────── */
+
+.ct-tiles {
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+
+  max-width: 920px;
+
+  margin: 0 auto 1.5rem;
+}
+
+/* tile */
+.ct-tile {
+
+  border-radius: 22px;
+
+  border: 1px solid #dbe7f3;
+
+  background: rgba(255,255,255,0.82);
+
+  backdrop-filter: blur(12px);
+
+  padding: 1.5rem 1.25rem;
+
+  text-align: center;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 8px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s cubic-bezier(0.22, 0.68, 0, 1.2),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* glow hover */
+.ct-tile::before {
+
+  content: '';
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(circle at top right,
+      rgba(10,102,194,0.07),
+      transparent 60%);
+
+  opacity: 0;
+
+  transition: opacity 0.35s ease;
+
+  pointer-events: none;
+}
+
+.ct-tile:hover::before {
+
+  opacity: 1;
+}
+
+.ct-tile:hover {
+
+  transform: translateY(-8px);
+
+  border-color: rgba(10,102,194,0.16);
+
+  box-shadow:
+    0 24px 60px rgba(15,23,42,0.08);
+}
+
+/* ───────────────── ICON ───────────────── */
+
+.ct-tile-icon {
+
+  width: 54px;
+  height: 54px;
+
+  border-radius: 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 21px;
+
+  margin-bottom: 4px;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.ct-tile:hover .ct-tile-icon {
+
+  transform: scale(1.1);
+}
+
+/* unified Narvee branding */
+.ct-tile--blue .ct-tile-icon,
+.ct-tile--green .ct-tile-icon,
+.ct-tile--purple .ct-tile-icon {
+
+  background: #eaf4ff;
+
+  color: #0a66c2;
+}
+
+.ct-tile:hover .ct-tile-icon {
+
+  background: #0a66c2;
+
+  color: #fff;
+}
+
+/* ───────────────── LABEL ───────────────── */
+
+.ct-tile-lbl {
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+
+  color: #94a3b8;
+
+  font-family: 'Outfit', sans-serif;
+}
+
+/* ───────────────── VALUE ───────────────── */
+
+.ct-tile-val {
+
+  font-size: 0.92rem;
+
+  font-weight: 600;
+
+  color: #0f172a;
+
+  line-height: 1.6;
+
+  font-family: 'Outfit', sans-serif;
+}
+
+/* ───────────────── LINK ───────────────── */
+
+.ct-tile-link {
+
+  font-size: 0.8rem;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  margin-top: 4px;
+
+  color: #0a66c2;
+
+  font-family: 'Outfit', sans-serif;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.ct-tile-link:hover {
+
+  opacity: 0.8;
+
+  transform: translateX(2px);
+}
+
+/* ───────────────── AVAILABILITY ───────────────── */
+
+.ct-avail {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  max-width: 920px;
+
+  margin: 0 auto 2rem;
+
+  padding: 0.9rem 1.4rem;
+
+  border-radius: 18px;
+
+  background: rgba(255,255,255,0.82);
+
+  backdrop-filter: blur(12px);
+
+  border: 1px solid #dbe7f3;
+
+  box-shadow:
+    0 12px 30px rgba(15,23,42,0.04);
+}
+
+/* dot */
+.ct-avail-dot {
+
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  flex-shrink: 0;
+
+  animation: ctPulse 2s ease-in-out infinite;
+}
+
+@keyframes ctPulse {
+
+  0%,100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.4);
+    opacity: 0.5;
+  }
+}
+
+.ct-avail-text {
+
+  font-size: 0.84rem;
+
+  color: #15803d;
+
+  font-weight: 500;
+
+  font-family: 'Outfit', sans-serif;
+}
+
+/* ───────────────── MAP ───────────────── */
+
+.ct-map {
+
+  max-width: 920px;
+
+  margin: 0 auto;
+
+  height: 320px;
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  border: 1px solid #dbe7f3;
+
+  box-shadow:
+    0 24px 60px rgba(15,23,42,0.08);
+
+  background: rgba(255,255,255,0.82);
+
+  backdrop-filter: blur(12px);
+}
+
+.ct-map iframe {
+
+  width: 100%;
+  height: 100%;
+
+  border: none;
+}
+
+/* ───────────────── RESPONSIVE ───────────────── */
+
+@media (max-width: 768px) {
+
+  .ct {
+
+    padding: 3rem 1.2rem;
+  }
+
+  .ct-tiles {
+
+    grid-template-columns: 1fr;
+
+    max-width: 420px;
+  }
+
+  .ct-head h2 {
+
+    font-size: 2rem;
+  }
+
+  .ct-map {
+
+    height: 240px;
+  }
+}
